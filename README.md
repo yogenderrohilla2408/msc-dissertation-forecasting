@@ -27,6 +27,8 @@ Walk-forward (out-of-time) evaluation, tested on unseen future periods:
 
 The Gradient Boosting Regressor consistently outperformed the Random Forest model on the final held-out test set, while both models maintained strong performance under walk-forward validation across different time periods, indicating reasonable robustness to temporal shift within the tested window.
 
+![Actual vs Predicted - Gradient Boosting](image_18.png)
+
 ## Methodology
 
 1. **Data collection & cleaning** — 10 years of daily TSLA OHLCV data (2014–2023), with missing-value handling and outlier treatment.
@@ -37,15 +39,15 @@ The Gradient Boosting Regressor consistently outperformed the Random Forest mode
 3. **Modelling** — Random Forest and Gradient Boosting regressors, tuned via `GridSearchCV` and evaluated with 5-fold cross-validation.
 4. **Evaluation** — MSE, RMSE, MAE, R², Explained Variance, and Median Absolute Error, benchmarked on a held-out test set and validated further via walk-forward testing across distinct historical periods.
 
+![Phase Space Plot of Tesla Stock Closing Prices](image_6.png)
+
 ## Repository Structure
 
-```
 ├── dissertation_project.ipynb   # Full analysis notebook (recommended entry point)
 ├── dissertation_project.py      # Script version of the same pipeline
 ├── tsla_2014_2023.csv           # Raw historical TSLA price data
 ├── tsla_cleaned.csv             # Cleaned dataset after preprocessing
 └── requirements.txt             # Python dependencies
-```
 
 ## Tech Stack
 
